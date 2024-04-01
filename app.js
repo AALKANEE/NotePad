@@ -23,7 +23,7 @@ function newNote(e){
     //create remove element
     const removeBtn = document.createElement('a')
     removeBtn.textContent='X'
-    console.log(removeBtn)
+    removeBtn.classList = 'remove-note'
     
     //create <li> tag
     const li=document.createElement('li')
