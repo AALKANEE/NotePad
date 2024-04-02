@@ -38,7 +38,7 @@ function newNote(e){
     // adding li to the note list
     noteList.appendChild(li)
 
-    addNoteToLocalStorage()
+    addNoteToLocalStorage(note)
 }
 
 //remove note from list
@@ -49,17 +49,28 @@ function removeNote(e){
 }
 
 //adding note to the local storage
-function addNoteToLocalStorage(){
+function addNoteToLocalStorage(note){
+    //get the note from localStorage
     const notes = getNotesFromLocalStorage()
+
+    //add new note to the notes array
+    notes.push(note)
+
+    //add new notes Array to the LocalStorage
+    localStorage.setItem('notes',JSON.stringify(notes))
 }
 
 //get notes from localStorage
 function getNotesFromLocalStorage(){
     let notes;
+
+    //get previous notes from localStorage
     let getFromLS=localStorage.getItem('notes');
     if(getFromLS===null){
+        //if not exist create empty array
         notes=[];
     }else{
+        //if exist convert to the array
         notes=JSON.parse(getFromLS)
     }
     return notes
