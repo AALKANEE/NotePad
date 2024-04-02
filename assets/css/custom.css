@@ -9,18 +9,20 @@ h1, h2 {
 .remove-note:hover {
     float: left;
     cursor: pointer;
-    color: red;
+    color: orange;
     font-weight: bold;
 }
 #label {
     text-align: right;
 }
 body{
+background-color: gray;
 direction: rtl;
 font-family: 'Vazir-medium', sans-serif;
 font-weight: 500;
 
 }
+
 @font-face {
     font-family: Vazir;
     src: url('Vazir.eot');
