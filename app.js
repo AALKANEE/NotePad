@@ -12,6 +12,9 @@ function eventlisteners(){
 
     //remove note
     document.querySelector('#note-list').addEventListener('click',removeNote)
+
+    //get data from localStorage on loaded
+    document.addEventListener('DOMContentLoaded',localStorageOnLoad)
 }
 
 
@@ -74,4 +77,27 @@ function getNotesFromLocalStorage(){
         notes=JSON.parse(getFromLS)
     }
     return notes
+}
+
+//get data from local storage on load
+function localStorageOnLoad(){
+      const notes= getNotesFromLocalStorage();
+    
+      //print each item of array
+      notes.forEach(function(note) {
+        //create remove element
+      const removeBtn = document.createElement('a')
+      removeBtn.textContent='X'
+      removeBtn.classList = 'remove-note'
+    
+      //create <li> tag
+      const li=document.createElement('li')
+      li.appendChild(document.createTextNode(note))
+
+      //adding remove button to the li
+      li.appendChild(removeBtn)
+
+      // adding li to the note list
+      noteList.appendChild(li)
+    });
 }
