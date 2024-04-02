@@ -41,7 +41,11 @@ function newNote(e){
     // adding li to the note list
     noteList.appendChild(li)
 
+    this.reset()
+
     addNoteToLocalStorage(note)
+
+    alert('Note added successfully! ')
 }
 
 //remove note from list
@@ -120,6 +124,4 @@ function removeNoteLocalStorage(noteContent){
    })
    //set new array of notes to the local storage
    localStorage.setItem('notes',JSON.stringify(notesFromLS))
-   console.log(notesFromLS)
-   console.log(noteDelete)
 }

@@ -1,17 +1,45 @@
-h1, h2 {
+
+h1 {
+    
+    justify-content: center;
+    background-color: rgba(255, 165, 0, 0.3); 
+    padding: 30px; /* فاصله درونی کادر */
+    text-align: center; /* مرکز چین کردن متن */
+    border-radius: 60%; /* تغییر شکل به بیضی */
+    display: flex; /* نمایش به عنوان بلاک در خط */
+    
+}
+
+h2 {
     text-align: center;
+    
 }
 
 #content {
     margin-top: 40px;
 }
-.remove-note,
-.remove-note:hover {
+.remove-note {
     float: left;
     cursor: pointer;
     color: orange;
     font-weight: bold;
+    background-color: transparent;
+    border: 2px solid orange; /* اضافه کردن حلقه */
+    border-radius: 50%; /* تغییر شکل حلقه به گرد */
+    padding: 5px;
 }
+
+.remove-note:hover {
+    background-color: orange; /* تغییر رنگ پس زمینه هنگام هوور */
+    color: white; /* تغییر رنگ متن هنگام هوور */
+}
+
+.remove-note:active {
+    background-color: red; /* تغییر رنگ پس زمینه هنگام کلیک */
+}
+
+
+
 #label {
     text-align: right;
 }
