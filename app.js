@@ -37,10 +37,30 @@ function newNote(e){
 
     // adding li to the note list
     noteList.appendChild(li)
+
+    addNoteToLocalStorage()
 }
 
+//remove note from list
 function removeNote(e){
     if(e.target.classList.contains('remove-note')){
         e.target.parentElement.remove()
     }
+}
+
+//adding note to the local storage
+function addNoteToLocalStorage(){
+    const notes = getNotesFromLocalStorage()
+}
+
+//get notes from localStorage
+function getNotesFromLocalStorage(){
+    let notes;
+    let getFromLS=localStorage.getItem('notes');
+    if(getFromLS===null){
+        notes=[];
+    }else{
+        notes=JSON.parse(getFromLS)
+    }
+    return notes
 }
