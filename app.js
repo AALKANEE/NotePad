@@ -49,6 +49,9 @@ function removeNote(e){
     if(e.target.classList.contains('remove-note')){
         e.target.parentElement.remove()
     }
+    
+    //also remote the note from the local storage
+    removeNoteLocalStorage(e.target.parentElement.textContent)
 }
 
 //adding note to the local storage
@@ -100,4 +103,12 @@ function localStorageOnLoad(){
       // adding li to the note list
       noteList.appendChild(li)
     });
+}
+
+//also Remove note from localStorage
+function removeNoteLocalStorage(noteContent){
+    //delete X from the content
+    const note = noteContent.substring(0,noteContent.length-1)
+    
+
 }
